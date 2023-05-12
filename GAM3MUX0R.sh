@@ -20,6 +20,11 @@ spinner() {
   echo -e "\r[✔] Done!        "
 }
 
+# Copy script to bin folder
+cp "$(realpath "${BASH_SOURCE[0]}")" "$PREFIX/bin/GAM3MUX0R" 2>&1 &
+spinner
+chmod +x "$PREFIX/bin/GAM3MUX0R" 2>&1 &
+spinner
 # Function to install packages quietly with a progress indicator
 install_packages() {
   pkg up -y >/dev/null 2>&1 &
